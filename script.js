@@ -157,39 +157,64 @@
 // Escriba un programa que pida al usuario ingresar un usuario y una contraseña, y le indique si ha validado o no, debemos tener mínimo 5 usuarios en el Local Storage (cargados previamente por el programa, con formato a elegir por el alumno) y usarlos para saber si el usuario ha accedido o no.
 
 
-let i = 0;
+// let i = 0;
 
-const press = document.getElementById("send");
-press.addEventListener("click", (e)=>{
-  e.preventDefault()
-  let fname = document.getElementById("nombre").value;
-  let password = document.getElementById("pass").value;
+// const press = document.getElementById("send");
+// press.addEventListener("click", (e)=>{
+//   e.preventDefault()
+//   let fname = document.getElementById("nombre").value;
+//   let password = document.getElementById("pass").value;
 
-  i++;
-  let usuario = {
-    nombre: fname,
-    contraseña: password
-  }
+//   i++;
+//   let usuario = {
+//     nombre: fname,
+//     contraseña: password
+//   }
 
-  localStorage.setItem(`usuario${i}`, JSON.stringify(usuario))
-})
+//   localStorage.setItem(`usuario${i}`, JSON.stringify(usuario))
+// })
+
+localStorage.setItem('Juanpe', '123456');
+localStorage.setItem('Juanjo', '987654');
+localStorage.setItem('Juancar', 'plokij');
+localStorage.setItem('Bonifacio', 'waesrdtf');
+localStorage.setItem('Juanma', 'okijuhyg')
+
+let fname = document.getElementById("nombre")
+
+let password = document.getElementById("pass")
+
+function validacion() {
+  let leido = localStorage.getItem(fname.value)
+  if(leido != password.value) {
+    alert('Contraseña incorrecta')
+  } else {
+    alert('Login correcto')
+  }console.log(password.value)
+}
+
+validacion()
+
+console.log(leido)
+
+
 
 // Ten precargado en un array 20 números y ordénalo.
 
-function ordenamientoBurbuja(items) {
-  let length = items.length;
-  for(let i = 0; i < length; i++) {
-    for(let j = 0; j < (length -i -1); j++) {
-      if(items[j] > items[j+1]) {
-        let numact = items[j];
-        items[j] = items[j+1];
-        items[j+1] = numact;
-      }
-    }
-  }
-}
+// function ordenamientoBurbuja(items) {
+//   let length = items.length;
+//   for(let i = 0; i < length; i++) {
+//     for(let j = 0; j < (length -i -1); j++) {
+//       if(items[j] > items[j+1]) {
+//         let numact = items[j];
+//         items[j] = items[j+1];
+//         items[j+1] = numact;
+//       }
+//     }
+//   }
+// }
 
-let arr = [20, 18, 19, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-ordenamientoBurbuja(arr)
-console.log(arr)
+// let arr = [20, 18, 19, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+// ordenamientoBurbuja(arr)
+// console.log(arr)
 
