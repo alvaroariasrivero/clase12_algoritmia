@@ -126,26 +126,22 @@
 
 // Escriba un programa que pida al usuario ingresar un usuario y una contraseña, y le indique si ha validado o no, debemos tener mínimo 5 usuarios en el Local Storage (cargados previamente por el programa, con formato a elegir por el alumno) y usarlos para saber si el usuario ha accedido o no.
 
-let fname = document.getElementById("nombre")
-let password = document.getElementById("pass")
 
+let i = 0;
 
-function boton() {
-  const press = document.getElementById("send");
-  press.addEventListener("click", almacenaje())
-}
+const press = document.getElementById("send");
+press.addEventListener("click", (e)=>{
+  e.preventDefault()
+  let fname = document.getElementById("nombre").value;
+  let password = document.getElementById("pass").value;
 
-boton()
-
-function almacenaje() {
-  let i = 0
   i++;
   let usuario = {
-    nombre: fname.value,
-    contraseña: password.value
+    nombre: fname,
+    contraseña: password
   }
+
   localStorage.setItem(`usuario${i}`, JSON.stringify(usuario))
+})
 
-}
 
-almacenaje()
